@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto_final.mainPageController">
+   <top>
+       <MenuBar BorderPane.alignment="CENTER">
+           <Menu mnemonicParsing="false" text="File">
+               <MenuItem mnemonicParsing="false" onAction="#addNewEmployee" text="New Employee" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Edit">
+               <MenuItem mnemonicParsing="false" text="Delete" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Help">
+               <MenuItem mnemonicParsing="false" text="About" />
+           </Menu>
+       </MenuBar>
+   </top>
+   <left>
+       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <Button layoutX="44.0" layoutY="272.0" mnemonicParsing="false" onAction="#addNewEmployee" text="Novo Funcionário" />
+           <TableView fx:id="tableFuncionarios" layoutY="39.0" onKeyTyped="#selectItem" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                   <TableColumn fx:id="tableNomeFun" prefWidth="75.0" text="Nome" />
+                   <TableColumn fx:id="tableCPDFun" prefWidth="75.0" text="CPF" />
+               </columns>
+           </TableView>
+       </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="339.0" BorderPane.alignment="CENTER">
+          <TilePane layoutX="0.0" layoutY="21" prefHeight="26.0" prefWidth="302">
+              <Label text="Nome" />
+              <TextField fx:id="nome" editable="false" promptText="Nome do funcionário" />
+          </TilePane>
+          <TilePane layoutX="0" layoutY="56.0" prefHeight="26.0" prefWidth="302.0">
+              <Label text="Telefone" />
+              <TextField fx:id="telefone" editable="false" promptText="Telefone" />
+          </TilePane>
+          <TilePane layoutX="0" layoutY="91.0">
+              <Label layoutX="32.0" layoutY="120" text="Nascimento" />
+              <TextField fx:id="nascimento" editable="false" layoutX="97.0" layoutY="120.0" promptText="Data de nascimento" />
+          </TilePane>
+          <TilePane layoutY="126" prefHeight="26.0" prefWidth="302">
+              <Label text="CPF" />
+              <TextField fx:id="CPF" layoutX="97.0" layoutY="120.0" onKeyPressed="#search" promptText="CPF" />
+          </TilePane>
+          <TilePane layoutX="0" layoutY="161" prefHeight="26.0" prefWidth="302">
+              <Label text="Endereço" />
+              <TextField fx:id="endereco" editable="false" layoutX="97.0" layoutY="120.0" promptText="Endereço" />
+          </TilePane>
+          <TilePane layoutX="0.0" layoutY="196.0" prefHeight="25.0" prefWidth="305.0">
+              <Label text="RG" />
+              <TextField fx:id="RG" editable="false" promptText="RG" />
+          </TilePane>
+          <TilePane layoutX="0.0" layoutY="231.0" prefHeight="25.0" prefWidth="305.0">
+              <Label text="Carteira de trabalho" />
+              <TextField fx:id="carteiraTrabalho" editable="false" promptText="Carteira de trabalho" />
+          </TilePane>
+          <TilePane layoutX="150.0" layoutY="266.0" prefHeight="25.0" prefWidth="305.0">
+            <CheckBox fx:id="ativo" disable="true" layoutX="50.0" mnemonicParsing="false" text="Ativo" />
+          </TilePane>
+      </AnchorPane>
+   </center>
+</BorderPane>
